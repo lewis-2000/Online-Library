@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&display=swap');
+
+
+body{
+    background: url('../assets/bookTest.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.library-content{
+    height: 100vh;
+
+}
+
+/* Showcase Card content */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    background-color: transparent; 
+}
+
+/* Style for the card */
+
+.card {
+    border: none;
+    width: 15rem;
+    margin: 1rem;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.showcase-title{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+}
