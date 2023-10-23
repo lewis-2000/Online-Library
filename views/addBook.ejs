@@ -29,42 +29,44 @@
             </div>
           
             <form class="mx-auto my-2 my-lg-0" action="/search" method="get">
-                <div class="input-group search">
+                <div class="input-group">
                     <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </div>
             </form>
-            
         </div>
     </nav>
 
-    <main class="library-content">
+    <!-- Your existing HTML structure -->
 
-        <div class="book-categories">
-
-            <div class="category">
-                <div class="title">
-                    <h1>Search Items</h1>
-                </div>            
-
-                
-                
-                <!-- Display the search query if available -->
-                <% if (searchQuery) { %>
-                    <section class="card-container">
-                        <% for (let i = 0; i < books.length; i++) { %>
-                            <div class="card">
-                                <img src="<%= books[i].image %>" alt="Book <%= i + 1 %>">
-                            </div>
-                        <% } %>
-                    </section>
-                <% } %>
-
+<main class="library-content">
+    <h2>Add a Book</h2>
+    <form action="/addBook" method="post" class="centered-form">
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" class="form-control" id="author" name="author" required>
         </div>
 
+        <div class="form-group">
+            <label for="image">Image Location:</label>
+            <input type="text" class="form-control" id="image" name="image" required>
         </div>
-       
-    </main>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="dateAdded">Date Added:</label>
+            <input type="date" class="form-control" id="dateAdded" name="dateAdded" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </form>
+</main>
+
+
 
 </body>
 </html>
