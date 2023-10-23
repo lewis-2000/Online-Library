@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="icon" href="./img/library-logo.svg" type="img/svg+xml">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <title>Online Library</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Library</a>
+          
+            <!-- Dropdown Menu for "Browse" -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="browseDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Browse
+                </button>
+                <div class="dropdown-menu" aria-labelledby="browseDropdown">
+                    <a class="dropdown-item" href="/browse/books">Books</a>
+                    <a class="dropdown-item" href="/browse/journals">Journals</a>
+                    <a class="dropdown-item" href="/browse/magazines">Magazines</a>
+                </div>
+            </div>
+          
+            <form class="mx-auto my-2 my-lg-0" action="/search" method="get">
+                <div class="input-group search">
+                    <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+            
+        </div>
+    </nav>
+
+    <main class="library-content">
+
+        <div class="book-categories">
+
+            <div class="category">
+                <div class="title">
+                    <h1>All Books</h1>
+                </div>            
+
+                
+                
+                <!-- Display the search query if available -->
+                    <section class="card-container">
+                        <% for (let i = 0; i < books.length; i++) { %>
+                            <div class="card">
+                                <img src="<%= books[i].image %>" alt="Book <%= i + 1 %>">
+                            </div>
+                        <% } %>
+                    </section>
+
+        </div>
+
+        </div>
+       
+    </main>
+
+</body>
+</html>

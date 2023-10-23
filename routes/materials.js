@@ -2,8 +2,12 @@ const express = require('express');
 const router = express.Router();
 const {MongoClient} = require('mongodb');
 
+const url = "mongodb://localhost:27017";
 const dbName = 'onlineLibrary';
 const collectionName = "book";
+
+const client = new MongoClient(url);
+
 
 async function retrieveBooks() {
     try {
@@ -21,8 +25,10 @@ async function retrieveBooks() {
     }
 }
 
-router.get('/', function (req, res) {
-    res.render('materials');
+router.get('/',async function (req, res) {
+
+    const books = await retrieveBooks();
+    res.render('materials', {books});
 
 }).post(function (req, res){
     res.render('materials');
