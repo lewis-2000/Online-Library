@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const app= express();
 
@@ -22,7 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', require('./routes/home'));
 app.use('/account', require('./routes/account'));
 app.use('/materials', require('./routes/materials'));
-
+app.use('/search', require('./routes/search'));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 
 
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 
 
 body{
@@ -8,9 +9,10 @@ body{
 
 }
 
+
 .library-content{
     height: 100vh;
-
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Showcase Card content */
@@ -25,24 +27,73 @@ body{
 }
 
 /* Style for the card */
-
 .card {
     border: none;
     width: 15rem;
+    display: flex;
     margin: 1rem;
+    border-radius: 5px;
     text-align: center;
     background-size: cover;
     background-position: center;
+    color: #fff; /* Text color for readability on the image */
+    overflow: hidden; /* Ensure that the hover effect is contained within the card */
 }
 
-
+/* Style for the card image */
 .card img {
     max-width: 100%;
     height: auto;
+    transition: transform 0.9s ease;
 }
+
+/* Hover effect for the card */
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:not(:hover) {
+    transform:scale(1);
+}
+
+@keyframes showcase-out {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes showcase {
+    from {
+        transform: none;
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
 
 .showcase-title{
     text-align: center;
     color: #ffffff;
     font-family: 'Alumni Sans Collegiate One', sans-serif;
 }
+
+
+.book-categories section{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+.category{
+    text-align: center;
+    color: #ffffff;
+    background: #000000b6;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+
