@@ -7,6 +7,7 @@
     <link rel="icon" href="./img/library-logo.svg" type="img/svg+xml">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/search.js"></script>
 
     <title>Online Library</title>
 </head>
@@ -53,11 +54,17 @@
                 <% if (searchQuery) { %>
                     <section class="card-container">
                         <% for (let i = 0; i < books.length; i++) { %>
-                            <div class="card">
-                                <img src="<%= books[i].image %>" alt="Book <%= i + 1 %>">
+                          <div class="card">
+                            <img src="<%= books[i].image %>" alt="Book <%= i + 1 %>">
+                            <div class="card-info">
+                                <h2><%= books[i].author %></h2>
+                                <button class="add-to-collection-button" data-bookid="<%= i %>">Add to Collection</button>
+
                             </div>
+                            
+                          </div>
                         <% } %>
-                    </section>
+                      </section>
                 <% } %>
 
         </div>
@@ -67,4 +74,5 @@
     </main>
 
 </body>
+
 </html>

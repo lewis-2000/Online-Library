@@ -119,4 +119,14 @@ body{
     max-width: 300px; 
 }
 
+.card-info{
+    text-align: center;
+    color: #ffffff;
+    background: #000000c7;
+}
 
+.card-info button{
+    background: #5f3e05c7;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
