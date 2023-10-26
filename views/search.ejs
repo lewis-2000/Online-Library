@@ -58,7 +58,10 @@
                             <img src="<%= books[i].image %>" alt="Book <%= i + 1 %>">
                             <div class="card-info">
                                 <h2><%= books[i].author %></h2>
-                                <button class="add-to-collection-button" data-bookid="<%= i %>">Add to Collection</button>
+                                <form action="/account" method="get">
+                                    <button type="submit" class="add-to-collection-button" data-bookid="<%= i %>">Add to Collection</button>
+
+                                </form>
 
                             </div>
                             
